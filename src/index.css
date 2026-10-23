@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --color-navy-950: #071634;
+  --color-navy-900: #0a1f44;
+  --color-cobalt-600: #2563eb;
+  --color-cobalt-700: #1d4ed8;
+  --color-mist: #f3f7fe;
+  --color-line: #dbe5f7;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); color: #0f172a; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+@layer components {
+  .wrap { @apply mx-auto max-w-[1200px] px-5 md:px-8; }
+  .eyebrow { @apply text-[13px] font-semibold uppercase tracking-[.14em] text-cobalt-700; }
+  .on-dark .eyebrow { @apply text-sky-300; }
+  .btn { @apply inline-flex min-h-12 items-center gap-2 rounded-full px-6 text-[15px] font-semibold transition-transform duration-200 hover:-translate-y-0.5; }
+  .btn-primary { @apply bg-cobalt-600 text-white shadow-lg shadow-cobalt-600/40; }
+  .btn-ghost { @apply border border-white/40 text-white; }
+  .card { @apply flex flex-col overflow-hidden rounded-[22px] border border-line bg-white transition-shadow duration-300 hover:shadow-2xl hover:shadow-navy-900/15; }
+  .muted { @apply text-[15px] leading-relaxed text-slate-600; }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 45s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
+}
