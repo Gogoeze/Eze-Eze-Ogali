@@ -3,11 +3,9 @@ import { ArrowRight, Clapperboard, ExternalLink, Mail, Megaphone, MessageCircle,
 import { Link } from "react-router-dom";
 import CountUp from "../components/CountUp";
 import MediaSlot from "../components/MediaSlot";
-import ProjectCard from "../components/ProjectCard";
-import ClientLogo from "../components/ClientLogo";
 import Reveal from "../components/Reveal";
 import WorkCarousel from "../components/WorkCarousel";
-import { clients, mediaSlots, person, projects, services, testimonial } from "../data/content";
+import {  mediaSlots, person, services, testimonial } from "../data/content";
 import LogoMarquee from "../components/LogoMarquee";
 
 
