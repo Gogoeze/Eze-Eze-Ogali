@@ -17,8 +17,8 @@ export type Project = {
   icon: IconKey;
   link: { label: string; href: string };
   metric: { value: string; label: string; source?: { label: string; href: string } };
-  mediaLabel: string;
-};
+  // mediaLabel: string;
+image?: { src: string; alt: string; fit?: "cover" | "contain" };};
 
 export const person = {
   name: "Eze Eze Ogali",
@@ -37,6 +37,7 @@ export const person = {
     "Whether training local journalists or orchestrating nationwide broadcast campaigns, my focus is always on creating narratives that empower communities and save lives.",
   ],
   portraitLabel: "[ADD PORTRAIT PHOTO]",
+  portrait: { src: "/logos/eze1.jpg", alt: "Portrait of Eze Eze Ogali" },
 };
 
 export const clients = [
@@ -68,7 +69,8 @@ export const projects: Project[] = [
       label: "of NTA’s audience watched within 3 months of broadcast",
       source: { label: "BBC World Service Trust midline study", href: "https://media-development.comminit.com/content/media-and-behaviour-change-midline-case-study-bbc-world-service-trusts-stop-hiv" },
     },
-    mediaLabel: "[ADD IMAGE OR VIDEO: episode still or trailer]",
+    // mediaLabel: "[ADD IMAGE OR VIDEO: episode still or trailer]",
+    image: { src: "/logos/wetindey.jpg", alt: "wetin dey tv drama", fit: "contain" },
   },
   {
     slug: "talk-your-own",
@@ -84,8 +86,8 @@ export const projects: Project[] = [
     tools: ["Production management", "Governance", "Investigative audio"],
     icon: "radio",
     link: { label: "BBC Media Action", href: "https://www.bbc.co.uk/mediaaction" },
-    metric: { value: "[ADD FIGURE]", label: "e.g. listeners, episodes or communities reached" },
-    mediaLabel: "[ADD IMAGE OR AUDIO CLIP: recording]",
+    metric: { value: "19.7M", label: "Nigerians reached by Talk Your Own in 2016, across 160+ stations" },    // mediaLabel: "[ADD IMAGE OR AUDIO CLIP: recording]",
+      image: { src: "/logos/TalkYourOwn.jpg", alt: "Story Story: Voices from the Market logo", fit: "contain" }, 
   },
   {
     slug: "flava",
@@ -100,8 +102,11 @@ export const projects: Project[] = [
     tools: ["Adolescent health", "Behavioral analysis", "Radio production"],
     icon: "radio",
     link: { label: "STOP HIV endline evaluation", href: "https://files.comminit.com/content/media-and-behaviour-change-endline-evaluation-stop-hiv-campaign-nigeria-2005-2008" },
-    metric: { value: "[ADD FIGURE]", label: "e.g. listenership from the research report" },
-    mediaLabel: "[ADD IMAGE OR AUDIO CLIP: episode]",
+    metric: {
+        value: "77%",
+        label: "of Flava listeners said they learned something from the show",
+        source: { label: "BBC Media Action", href: "https://www.africa.comminit.com/node/9377594" },
+      },    // mediaLabel: "[ADD IMAGE OR AUDIO CLIP: episode]",
   },
   {
     slug: "breakthrough-action",
@@ -121,7 +126,8 @@ export const projects: Project[] = [
       label: "community members engaged by 3,100 trained volunteers (project-wide)",
       source: { label: "Johns Hopkins CCP", href: "https://ccp.jhu.edu/2024/06/05/breakthrough-action-nigeria-closing-transition-sustainability/" },
     },
-    mediaLabel: "[ADD IMAGE OR VIDEO: journalist training]",
+    // mediaLabel: "[ADD IMAGE OR VIDEO: journalist training]",
+    image: { src: "/logos/btal.jpg", alt: "Breakthrough ACTION logo", fit: "contain" }, 
   },
   {
     slug: "compass",
@@ -141,7 +147,9 @@ export const projects: Project[] = [
       label: "solar and wind-up radios across Nasarawa, Kano and Lagos",
       source: { label: "Lifeline Energy", href: "https://www.lifelineenergy.org/project/community-participation-action/" },
     },
-    mediaLabel: "[ADD IMAGE OR VIDEO: classroom radio lesson]",
+    // mediaLabel: "[ADD IMAGE OR VIDEO: classroom radio lesson]",
+    image: { src: "/logos/COMPASSL.png", alt: "COMPASS logo", fit: "contain" }, 
+
   },
 
     {
@@ -163,8 +171,8 @@ export const projects: Project[] = [
       label: "episodes over more than 13 years on air",
       source: { label: "BBC Media Action retrospective", href: "https://www.africa.comminit.com/node/9496495" },
     },
-    mediaLabel: "[ADD IMAGE OR AUDIO CLIP: Story Story episode]",
-  },
+    // mediaLabel: "[ADD IMAGE OR AUDIO CLIP: Story Story episode]",
+    image: { src: "/logos/StoryStory.jpg", alt: "Story Story: Voices from the Market logo", fit: "contain" },  },
 ];
 
 export const services = [
@@ -184,7 +192,25 @@ export const testimonial = {
 };
 
 export const mediaSlots = [
-  { kind: "video", title: "On screen", text: "Episode clips, trailers and campaign spots.", label: "[ADD VIDEO LINK OR EMBED]" },
-  { kind: "audio", title: "On air", text: "Radio episodes and community dialogue recordings.", label: "[ADD AUDIO CLIP]" },
-  { kind: "press", title: "In print", text: "Articles, studies and project insights featuring his work.", label: "[ADD PRESS OR RESEARCH LINK]" },
-] as const;
+  {
+   kind: "press",
+   title: "In print",
+   text: "A published article by Eze.",
+   label: "Read the article",
+   href: "https://journals.abuad.edu.ng/ajsd/article/view/1689",
+ },
+ {
+   kind: "audio",
+   title: "On air",
+   text: "An interview with Eze.",
+   label: "Listen to the interview",
+   href: "https://music.youtube.com/podcast/vxG7RiOU8MU",
+ },
+ {
+   kind: "press",
+   title: "Further reading",
+   text: "MY BARBER AND I",
+   label: "Read the write-up",
+   href: "https://www.bbc.com/mediaaction/stories/my-barber-and-i",
+ },
+ ] as const;

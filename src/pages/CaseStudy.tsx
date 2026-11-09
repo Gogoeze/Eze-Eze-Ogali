@@ -26,7 +26,7 @@ export default function CaseStudy() {
 
       <section className="py-16 md:py-20">
         <div className="wrap max-w-[900px]">
-          <MediaSlot label={p.mediaLabel} className="aspect-video rounded-3xl border-2" />
+          <MediaSlot label="" image={p.image} className="aspect-video rounded-3xl border-2" />
           <div className="mt-14 grid gap-10 md:grid-cols-2">
             <Reveal><h2 className="text-2xl">His role</h2><p className="muted mt-3 text-base">{p.role}</p></Reveal>
             <Reveal><h2 className="text-2xl">The result</h2><p className="muted mt-3 text-base">{p.result}</p></Reveal>

@@ -5,7 +5,7 @@ import CountUp from "../components/CountUp";
 import MediaSlot from "../components/MediaSlot";
 import Reveal from "../components/Reveal";
 import WorkCarousel from "../components/WorkCarousel";
-import {  mediaSlots, person, services, testimonial } from "../data/content";
+import { mediaSlots, person, services, testimonial } from "../data/content";
 import LogoMarquee from "../components/LogoMarquee";
 
 
@@ -53,9 +53,9 @@ export default function Home() {
 
       {/* Affiliated  with */}
       <section className="border-b border-line py-12">
-  <p className="mb-8 text-center text-xs uppercase tracking-[.14em] text-slate-600">Affiliated with</p>
-  <LogoMarquee />
-</section>
+        <p className="mb-8 text-center text-xs uppercase tracking-[.14em] text-slate-600">Affiliated with</p>
+        <LogoMarquee />
+      </section>
 
       {/* Work */}
       <section id="work" className="overflow-hidden py-20 md:py-28">
@@ -71,7 +71,7 @@ export default function Home() {
       {/* About */}
       <section id="about" className="bg-mist py-20 md:py-28">
         <div className="wrap grid items-center gap-14 md:grid-cols-[.8fr_1.2fr]">
-          <Reveal><MediaSlot label={person.portraitLabel} className="aspect-[4/5] rounded-3xl border-2" /></Reveal>
+          <Reveal><MediaSlot label={person.portraitLabel} image={person.portrait} className="aspect-[4/5] rounded-3xl" /></Reveal>
           <Reveal>
             <p className="eyebrow">About</p>
             <h2 className="mb-6 mt-3.5 text-[clamp(30px,3.6vw,42px)] leading-[1.15]">Theatre craft meets behavioral science.</h2>
@@ -112,15 +112,15 @@ export default function Home() {
         <div className="wrap">
           <Reveal className="mb-14 max-w-2xl">
             <p className="eyebrow">Media and links</p>
-            <h2 className="mt-3.5 text-[clamp(32px,4vw,46px)] leading-[1.1]">Watch, listen and read.</h2>
+            <h2 className="mt-3.5 text-[clamp(32px,4vw,46px)] leading-[1.1]">Listen and read.</h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-3">
             {mediaSlots.map((m, i) => (
               <Reveal key={m.title} delay={i * 0.1}>
-                <div className="card h-full">
+                <a href={m.href} target="_blank" rel="noreferrer" className="card h-full">
                   <MediaSlot label={m.label} kind={m.kind} />
                   <div className="p-7"><h3 className="text-xl">{m.title}</h3><p className="muted mt-2">{m.text}</p></div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>

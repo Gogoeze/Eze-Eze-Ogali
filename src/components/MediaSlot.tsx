@@ -7,13 +7,36 @@ export default function MediaSlot({
   kind = "image",
   className = "aspect-video",
   metric,
+  image,
 }: {
   label: string;
   kind?: keyof typeof icons;
   className?: string;
   metric?: { value: string; label: string };
+  image?: { src: string; alt: string; fit?: "cover" | "contain" };
 }) {
   const Icon = icons[kind];
+   if (image) {
+    const contain = image.fit === "contain";
+    return (
+       <div className={`relative overflow-hidden bg-slate-900 ${className}`}>
+     {contain && (
+       <img
+         src={image.src}
+         alt=""
+         aria-hidden
+         className="absolute inset-0 h-full w-full scale-110 object-cover opacity-80 blur-xl"
+       />
+     )}
+     <img
+       src={image.src}
+       alt={image.alt}
+       className={`relative h-full w-full ${contain ? "object-contain" : "object-cover"}`}
+       
+     />
+      </div>
+    );
+  }
   return (
     <div
       className={`flex flex-col items-center justify-center gap-2 border-b-2 border-dashed border-blue-300 bg-gradient-to-br from-blue-50 to-blue-200 p-4 text-center text-blue-900 ${className}`}

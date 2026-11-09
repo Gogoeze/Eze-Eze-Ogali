@@ -11,7 +11,7 @@ export default function ProjectCard({ project: p, index }: { project: Project; i
   return (
     <motion.div whileHover={{ y: -8, rotate: -0.4 }} transition={{ type: "spring", stiffness: 300, damping: 22 }} className="h-full">
       <Link to={`/work/${p.slug}`} className="card h-full">
-        <MediaSlot label={p.mediaLabel} metric={p.metric} />
+         <MediaSlot label="" metric={p.metric}  />
         <div className="flex flex-1 flex-col gap-3 p-7">
           <span className="flex items-center gap-2 text-[15px] font-semibold text-cobalt-700">
             <Icon size={18} aria-hidden /> 0{index + 1} · {p.org}
