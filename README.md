@@ -1,32 +1,33 @@
-# React + TypeScript + Vite
+# Eze Eze Ogali — Portfolio Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Live Site:** [eze-eze-ogali.vercel.app](https://eze-eze-ogali.vercel.app/)
 
-Currently, two official plugins are available:
+A responsive, modern portfolio landing page built for **Eze Eze Ogali**, an Abuja-based senior development communication strategist and media production expert.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **Stripe-Inspired Card Grid:** Clean, responsive layout with smooth card animations and visual hierarchy designed for media reels and case studies.
+- **Featured Work & Credentials:** Highlights major strategic communication campaigns (USAID Breakthrough ACTION Nigeria, BBC Media Action *Wetin Dey* and *Talk Your Own*), core skills, testimonials, and consulting work under Communication Aid International Limited.
+- **CMS-Ready Architecture:** Structured cleanly for Phase 2 Sanity CMS integration so content can be self-managed.
 
-## React Compiler
+## Tech Stack
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** Tailwind CSS
+- **Hosting:** Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the Oxlint configuration
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com
+   cd eze-ogali-portfolio
+   ```
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
